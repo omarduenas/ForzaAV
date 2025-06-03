@@ -4,80 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mode Designs</title>
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="logo">Mode Designs</div>
-      <ul class="nav-links">
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">New</a></li>
-        <li><a href="#">Best Sellers</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <a href="#">Mode Designs</a>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
       <div class="nav-icons">
-        <button aria-label="Search" class="icon-button">🔍</button>
-        <button aria-label="Cart" class="icon-button">🛒</button>
+        <button class="icon-button" aria-label="Search">🔍</button>
+        <button class="icon-button" aria-label="Cart">🛒</button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Banner -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Minimalist Jewelry, Made to Last</h1>
-      <p>Discover timeless designs crafted with care.</p>
-      <a href="#" class="btn">Shop Now</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://cdn.shopify.com/s/files/1/0067/6312/0340/files/homepage-hero.jpg?v=1679043285" alt="Jewelry Hero" />
-    </div>
-  </section>
-
-  <!-- Product Grid -->
-  <section class="products container">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://cdn.shopify.com/s/files/1/0067/6312/0340/products/IMG_2987_360x.jpg?v=1679042245" alt="Product 1" />
-        <h3>Stackable Rings</h3>
-        <p>$65.00</p>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Minimalist Jewelry, Made to Last</h1>
+        <p>Discover timeless designs crafted with care.</p>
+        <a href="#" class="btn-primary">Shop Now</a>
       </div>
-      <div class="product-card">
-        <img src="https://cdn.shopify.com/s/files/1/0067/6312/0340/products/IMG_2617_360x.jpg?v=1679042397" alt="Product 2" />
-        <h3>Chain Link Necklace</h3>
-        <p>$120.00</p>
-      </div>
-      <div class="product-card">
-        <img src="https://cdn.shopify.com/s/files/1/0067/6312/0340/products/IMG_2420_360x.jpg?v=1679042397" alt="Product 3" />
-        <h3>Delicate Earrings</h3>
-        <p>$45.00</p>
-      </div>
-      <div class="product-card">
-        <img src="https://cdn.shopify.com/s/files/1/0067/6312/0340/products/IMG_3183_360x.jpg?v=1679042397" alt="Product 4" />
-        <h3>Minimalist Bracelet</h3>
-        <p>$80.00</p>
+      <div class="hero-image">
+        <img src="https://cdn.shopify.com/s/files/1/0067/6312/0340/files/homepage-hero.jpg?v=1679043285" alt="Minimalist Jewelry" />
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer container">
-    <div>
-      <h3>Mode Designs</h3>
-      <p>© 2025 Mode Designs. All rights reserved.</p>
-    </div>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
-
-  <script src="scripts.js"></script>
-</body>
-</html>
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <div class="container">
+      <h2>Featured Products</h2>
+      <div cl
