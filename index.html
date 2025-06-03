@@ -1,250 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forza AV - Professional Event Services</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional AV services for live and corporate events.">
+  <title>Forza AV - Professional Event Production</title>
   <style>
-    :root {
-      --primary: #000;
-      --accent: #e63946;
-      --bg-light: #f9f9f9;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
       color: #333;
     }
-
-    nav {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
     header {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
-        url('https://images.unsplash.com/photo-1581276879432-15a67f196c89?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      background-color: #0a1f44;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      height: 60px;
+    }
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581090469606-3713cba26346?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
       height: 100vh;
+      color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
       text-align: center;
-      padding: 0 2rem;
+      position: relative;
     }
-
-    header h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
     }
-
-    header p {
-      font-size: 1.5rem;
-      max-width: 600px;
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
     }
-
-    section {
-      padding: 5rem 2rem;
-      max-width: 1100px;
-      margin: auto;
+    .hero h1 {
+      font-size: 3rem;
     }
-
-    h2 {
+    .hero p {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+    .section {
+      padding: 4rem 2rem;
+      background-color: white;
+    }
+    .section h2 {
+      color: #0a1f44;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
-
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
-
-    .card {
-      background-color: var(--bg-light);
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
+    .service {
+      background-color: #f0f0f0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card h3 {
-      padding: 1rem;
-      margin: 0;
-      background-color: var(--primary);
-      color: #fff;
-    }
-
-    .card p {
-      padding: 1rem;
-    }
-
     .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
       max-width: 600px;
-      margin: 2rem auto;
+      margin: 0 auto;
     }
-
     .contact-form input,
     .contact-form textarea {
-      padding: 1rem;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
+      border-radius: 4px;
     }
-
     .contact-form button {
-      background-color: var(--primary);
+      background-color: #9B7912;
       color: white;
+      padding: 0.75rem;
       border: none;
-      padding: 1rem;
-      border-radius: 6px;
-      font-size: 1rem;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-weight: bold;
     }
-
-    .contact-form button:hover {
-      background-color: var(--accent);
-    }
-
-    .socials {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .socials a {
-      color: var(--primary);
-      margin: 0 1rem;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
     footer {
+      background-color: #0a1f44;
+      color: white;
       text-align: center;
-      padding: 2rem;
-      background-color: #f1f1f1;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      header p {
-        font-size: 1.2rem;
-      }
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
-
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <header>
-    <h1 data-aos="fade-up">Forza AV</h1>
-    <p data-aos="fade-up" data-aos-delay="200">Professional AV Services for Events that Stand Out</p>
+    <img src="https://i.imgur.com/IeK4ztQ.png" alt="Forza AV Logo" class="logo">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section id="about" data-aos="fade-up">
-    <h2>About Forza AV</h2>
-    <p>At Forza AV, we believe every event deserves to look and sound incredible. With years of experience serving corporate, social, and nonprofit events, we offer reliable AV production, photography, videography, consulting, and live streaming solutions. We’re proud to partner with event professionals to deliver seamless, stress-free execution—every time.</p>
+  <section class="hero">
+    <h1>Expert AV Services for Unforgettable Events</h1>
+    <p>From concept to execution — we deliver seamless audio-visual experiences.</p>
   </section>
 
-  <section id="services" data-aos="fade-up">
+  <section class="section" id="services">
     <h2>Our Services</h2>
     <div class="services">
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80" alt="AV Production" />
-        <h3>AV Production</h3>
-        <p>Full-scale audio, video, and lighting setups for conferences, galas, and more.</p>
+      <div class="service">
+        <h3>Live Event Production</h3>
+        <p>Full-scale AV solutions tailored for live events of all sizes.</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://images.unsplash.com/photo-1555636222-cae831e670b4?auto=format&fit=crop&w=800&q=80" alt="Photography & Video Highlights" />
-        <h3>Photography & Video Highlights</h3>
-        <p>Capture the energy of your event with professional photography and cinematic recap videos.</p>
+      <div class="service">
+        <h3>Corporate Meetings</h3>
+        <p>Professional AV setup to ensure your message is heard and seen clearly.</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://images.unsplash.com/photo-1581090700227-1e8a37f2a1aa?auto=format&fit=crop&w=800&q=80" alt="Consulting" />
-        <h3>Meetings & Consulting</h3>
-        <p>Let us help you design an AV strategy that fits your needs and budget.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="400">
-        <img src="https://images.unsplash.com/photo-1613687285514-cfbc0f04c234?auto=format&fit=crop&w=800&q=80" alt="Live Streaming" />
-        <h3>Live Video Streaming</h3>
-        <p>Broadcast your event in real-time to remote audiences with high-quality streaming support.</p>
+      <div class="service">
+        <h3>LED Walls</h3>
+        <p>Stunning LED wall setups for maximum visual impact.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" data-aos="fade-up">
+  <section class="section" id="contact">
     <h2>Contact Us</h2>
     <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Phone Number">
       <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit">Request a Quote</button>
     </form>
-    <div class="socials">
-      <a href="https://www.instagram.com/forzaav" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/company/forzaav" target="_blank">LinkedIn</a>
-    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Forza AV. All rights reserved.</p>
+    &copy; 2025 Forza AV. All Rights Reserved.
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-  </script>
 </body>
-
 </html>
