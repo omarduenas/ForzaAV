@@ -1,207 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav>
+  <ul class="nav-menu">
+    <li><a href="#about">About</a></li>
+    <li class="dropdown">
+      <a href="#services">Services</a>
+      <ul class="dropdown-content">
+        <li><a href="#av-production">AV Production</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <!-- Add more sub-items as needed -->
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+nav {
+  background-color: #000;
+  padding: 1rem;
+  text-align: center;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forza AV - Professional Event Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Outfit', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0d0d0d;
-      color: #ffffff;
-    }
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+}
 
-    header {
-      background: url('https://images.unsplash.com/photo-1581276879432-15a67f196c89?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
+.nav-menu li {
+  position: relative;
+  margin: 0 1rem;
+}
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  display: block;
+}
 
-    header .content {
-      position: relative;
-      z-index: 1;
-    }
+.nav-menu a:hover {
+  color: #e50914;
+}
 
-    .logo {
-      width: 140px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1c1c1c;
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
 
-    header h1 {
-      font-size: 4rem;
-      margin: 0;
-    }
+.dropdown-content li {
+  margin: 0;
+}
 
-    header p {
-      font-size: 1.5rem;
-    }
+.dropdown-content a {
+  padding: 0.5rem 1rem;
+}
 
-    nav {
-      background-color: #000000;
-      padding: 1rem;
-      text-align: center;
-    }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+:root {
+  --primary-color: #e50914;
+  --background-color: #0d0d0d;
+  --card-background: #1c1c1c;
+  --text-color: #ffffff;
+  --secondary-text-color: #ccc;
+}
 
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+<header class="hero">
+  <div class="hero-content">
+    <img src="your-logo.png" alt="Forza AV Logo" class="logo">
+    <h1>Forza AV</h1>
+    <p>Professional AV Services for Events that Stand Out</p>
+  </div>
+</header>
+.hero {
+  background: url('your-hero-image.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
 
-    nav a:hover {
-      color: #e50914;
-    }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
+.logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1rem;
+}
 
-    .card {
-      background-color: #1c1c1c;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-    }
+.hero h1 {
+  font-size: 4rem;
+  margin: 0;
+}
 
-    .card h3 {
-      padding: 1rem;
-      margin: 0;
-      background-color: #e50914;
-      color: #fff;
-    }
-
-    .card p {
-      padding: 1rem;
-      color: #ccc;
-    }
-
-    .contact, footer {
-      text-align: center;
-    }
-
-    .socials a {
-      margin: 0 0.5rem;
-      display: inline-block;
-      color: #e50914;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 2rem auto;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem;
-      border: 1px solid #333;
-      border-radius: 4px;
-      background-color: #222;
-      color: white;
-    }
-
-    .contact-form button {
-      padding: 0.75rem;
-      background-color: #e50914;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <div class="content">
-      <img src="https://chat.openai.com/mnt/data/a865bf7aacb35b86ef33c537d4597aae.png" alt="Forza AV Logo" class="logo">
-      <h1>Forza AV</h1>
-      <p>Professional AV Services for Events that Stand Out</p>
+.hero p {
+  font-size: 1.5rem;
+}
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>AV Production</h3>
+      <p>Full-scale audio, video, and lighting setups for conferences, galas, and more.</p>
     </div>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Forza AV</h2>
-    <p>At Forza AV, we believe every event deserves to look and sound incredible. With years of experience serving corporate, social, and nonprofit events, we offer reliable AV production, photography, videography, consulting, and live streaming solutions. We’re proud to partner with event professionals to deliver seamless, stress-free execution—every time.</p>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>AV Production</h3>
-        <p>Full-scale audio, video, and lighting setups for conferences, galas, and more.</p>
-      </div>
-      <div class="card">
-        <h3>Photography & Video Highlights</h3>
-        <p>Capture the energy of your event with professional photography and cinematic recap videos.</p>
-      </div>
-      <div class="card">
-        <h3>Meetings & Consulting</h3>
-        <p>Let us help you design an AV strategy that fits your needs and budget.</p>
-      </div>
-      <div class="card">
-        <h3>Live Video Streaming</h3>
-        <p>Broadcast your event in real-time to remote audiences with high-quality streaming support.</p>
-      </div>
+    <div class="card">
+      <h3>Photography & Video Highlights</h3>
+      <p>Capture the energy of your event with professional photography and cinematic recap videos.</p>
     </div>
-  </section>
+    <!-- Add more service cards as needed -->
+  </div>
+</section>
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="socials">
-      <a href="https://www.instagram.com/forzaav" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/company/forzaav/" target="_blank">LinkedIn</a>
-    </div>
-  </section>
+.card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
 
-  <footer>
-    <p>&copy; 2025 Forza AV. All rights reserved.</p>
-  </footer>
-</body>
+.card h3 {
+  padding: 1rem;
+  margin: 0;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
 
-</html>
+.card p {
+  padding: 1rem;
+  color: var(--secondary-text-color);
+}
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div class="socials">
+    <a href="https://www.instagram.com/forzaav" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/company/forzaav/" target="_blank">LinkedIn</a>
+  </div>
+</section>
